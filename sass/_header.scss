@@ -1,0 +1,46 @@
+// Arquivo _header.scss
+
+@import 'variables';
+
+header {
+    background-color: var(--primary-color);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%; // O cabeçalho ocupa toda a largura da página
+    padding: 10px 20px; // Padding uniforme
+    box-sizing: border-box;
+
+    .container {
+        display: flex;
+        justify-content: space-between; // Espaço entre logo e menu
+        align-items: center; // Alinhamento vertical no centro
+        width: 100%; // Garante que o container ocupe toda a largura do header
+
+        .branding img {
+            max-height: 50px; // Altura máxima do logo
+            height: auto; // Mantém a proporção
+            width: auto; // Permite que a largura se ajuste automaticamente
+        }
+
+        .menu {
+            display: flex;
+
+            li {
+                font-weight: bold;
+                margin-left: 24px;
+
+                a {
+                    color: var(--text-color);
+                    text-decoration: none;
+                    transition: color var(--transition-time);
+
+                    &:hover {
+                        color: var(--secondary-hover);
+                    }
+                }
+            }
+        }
+    }
+}
