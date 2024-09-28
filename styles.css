@@ -1,0 +1,152 @@
+/* Variáveis */
+:root {
+    --primary-color: #182C61;
+    --secondary-color: #44bd32;
+    --secondary-hover: #4cd137;
+    --text-color: #fff;
+    --background-color: #f5f6fa;
+    --font-family: 'Roboto', sans-serif;
+}
+
+/* Reset de Estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+li {
+    list-style: none;
+}
+
+/* Container Global */
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+}
+
+.branding img {
+    max-width: 120px;
+    height: auto;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    font-weight: bold;
+    margin-left: 24px;
+}
+
+.menu li a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Produtos */
+.products-section {
+    padding: 56px 0;
+}
+
+.products {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 32.66%);
+    column-gap: 1%;
+    row-gap: 4%;
+    width: 100%;
+}
+
+.product-item {
+    text-align: center;
+    background-color: var(--text-color);
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.product-item img {
+    width: 100%;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+
+.product-item h4 {
+    margin-bottom: 8px;
+    color: var(--primary-color);
+}
+
+.product-item p {
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.product-button {
+    display: block;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 12px 0;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.product-button:hover {
+    background-color: var(--secondary-hover);
+}
+
+/* Efeitos de Hover */
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Responsividade */
+@media screen and (max-width: 1023px) {
+    .container {
+        max-width: 80%;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 48.5%);
+        column-gap: 3%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .products {
+        display: block;
+    }
+
+    .product-item {
+        margin-bottom: 32px;
+    }
+}
